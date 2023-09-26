@@ -39,7 +39,8 @@ public class CsvLineParser
             DateTimeStyles.None, 
             out DateTime dateTime))
         {
-            throw new Exception($"Invalid DateTime in csv line: {csvLine}");
+            //throw new Exception($"Invalid DateTime in csv line: {csvLine}");
+            throw new Exception($"Invalid DateTime: {csvLine}"); // Fault on purpose to fail test.
         }
 
         return new MachineDataItem(lineItems[0], dateTime);
